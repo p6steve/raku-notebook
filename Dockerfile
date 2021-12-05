@@ -1,17 +1,16 @@
-FROM sumankhanal/rakudo:2021.09
-LABEL maintainer="Dr Suman Khanal <suman81765@gmail.com>"
+FROM FROM p6steve/ubuntu-rakudo-2021.05
+#LABEL maintainer="Dr Suman Khanal <suman81765@gmail.com>"
 
-      
 #Enabling Binder..................................
-
-ENV NB_USER suman
-ENV NB_UID 1000
-ENV HOME /home/${NB_USER}
-RUN adduser --disabled-password \
-    --gecos "Default user" \
-    --uid ${NB_UID} \
-    ${NB_USER}
-    
+#
+#ENV NB_USER suman
+#ENV NB_UID 1000
+#ENV HOME /home/${NB_USER}
+#RUN adduser --disabled-password \
+#    --gecos "Default user" \
+#    --uid ${NB_UID} \
+#    ${NB_USER}
+#    
 #..............................................
       
 ENV PATH=$PATH:/usr/share/perl6/site/bin
@@ -34,15 +33,15 @@ ENTRYPOINT ["/usr/bin/tini", "--"]
 
 
 #For enabling binder..........................
-COPY ./raku-notebooks/ ${HOME}
-
-USER root
-RUN chown -R ${NB_UID} ${HOME}
-USER ${NB_USER}
-WORKDIR ${HOME}
+#COPY ./raku-notebooks/ ${HOME}
+#
+#USER root
+#RUN chown -R ${NB_UID} ${HOME}
+#USER ${NB_USER}
+#WORKDIR ${HOME}
 #..............................................
 
 
 EXPOSE 8888
 
-CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
+#CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
