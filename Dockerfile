@@ -28,8 +28,8 @@ RUN apt-get update \
 ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini
 RUN chmod +x /usr/bin/tini 
-ENTRYPOINT ["/usr/bin/tini", "--"]
-
+#ENTRYPOINT ["/usr/bin/tini", "--"]
+ENTRYPOINT ["/bin/bash"]
 
 
 #For enabling binder..........................
