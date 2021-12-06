@@ -5,7 +5,7 @@ Instructions:
 To run jupyter (or adjust Dockerfile)
 - git clone https://github.com/p6steve/raku-notebook
 - cd raku-notebook
-- docker build -t p6steve/rakudo:notebook-2021.05
+- docker build -t p6steve/rakudo:notebook-2021.05 .
 - docker push p6steve/rakudo:notebook-2021.05
 - docker run -itP rakudo:notebook-2021.05
 - jupyter notebook --port=8888 --no-browser --ip=0.0.0.0 --allow-root
