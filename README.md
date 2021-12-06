@@ -1,3 +1,22 @@
+p6steve fork to cover macOS M1 via vftools with
+ultimately FROM ubuntu:latest --platform=inux/arm64 VIA p6steve/rakudo
+
+Instructions:
+To run jupyter (or adjust Dockerfile)
+- git clone https://github.com/p6steve/raku-notebook
+- cd raku-notebook
+- docker build -t p6steve/rakudo:notebook-2021.05
+- docker push p6steve/rakudo:notebook-2021.05
+- docker run -itP rakudo:notebook-2021.05
+- jupyter notebook --port=8888 --no-browser --ip=0.0.0.0 --allow-root
+- docker container ls -a (new terminal, note vm-port mapped)
+Browse to http://ubuntu:vm-port?token
+
+(Copy 2021.05 and merge for other versions)
+
+Versions covered:
+- 2021.05
+
 # Raku notebook
 
 [![Raku](https://img.shields.io/badge/Raku-v6.d-blue.svg)](https://rakudo.org/downloads/star/)
