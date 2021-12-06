@@ -7,7 +7,7 @@ To run jupyter (or adjust Dockerfile)
 - cd raku-notebook
 - docker build -t p6steve/rakudo:notebook-2021.05 .
 - docker push p6steve/rakudo:notebook-2021.05
-- docker run -itP rakudo:notebook-2021.05
+- docker run -itP p6steve/rakudo:notebook-2021.05
 - jupyter notebook --port=8888 --no-browser --ip=0.0.0.0 --allow-root
 - docker container ls -a (new terminal, note vm-port mapped)
 Browse to http://ubuntu:vm-port?token
